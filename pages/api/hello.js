@@ -14,6 +14,7 @@ con.connect((err) => {
 
 export default (req, res) => {
 	res.status(200);
+	console.log(req.ip);
 	let query = "SELECT * FROM deeps ORDER BY RAND() LIMIT 10";
 	con.query(query, (err, result) => {
 		if (err) console.log(err);
